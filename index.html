@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Furniture Store</title>
+    <link rel="stylesheet" href="LF-Furniture-Style.css">
+    <script defer src="furniture.js"></script>
+</head>
+
+<body>
+    <h1>Patio Furniture Store</h1>
+
+    <div id="step1">
+        <label>Select an item:</label>
+        <select id="itemSelect">
+            <option value="">--Choose--</option>
+            <option value="Chair">Chair</option>
+            <option value="Loveseat">Loveseat</option>
+            <option value="Couch">Couch</option>
+        </select>
+        <button onclick="controller.chooseItem()">Next</button>
+    </div>
+
+    <div id="step2" class="hidden">
+        <label>Quantity:</label>
+        <select id="qtySelect">
+            <option value="">--Choose--</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+        </select>
+        <button onclick="controller.addItem()">Add Item</button>
+    </div>
+
+    <div id="step3" class="hidden">
+        <p>Would you like to add another item?</p>
+        <button onclick="controller.moreItems(true)">Yes</button>
+        <button onclick="controller.moreItems(false)">No</button>
+    </div>
+
+    <div id="step4" class="hidden">
+        <label>Enter State Abbreviation:</label>
+        <input id="stateInput" maxlength="2">
+        <button onclick="controller.finishOrder()">Finish</button>
+    </div>
+
+    <div id="invoice" class="hidden"></div>
+
+</body>
+</html>
